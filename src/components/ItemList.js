@@ -1,5 +1,7 @@
 import React from "react";
 import { cdnurl } from "../utils/constants";
+import { addItem } from "../utils/cartSlice";
+import { useDispatch } from "react-redux";
 const ItemList = (props) => {
   // Check if props.item exists
   console.log("2222222222222222222");
@@ -8,8 +10,15 @@ const ItemList = (props) => {
     return <p>No item data available</p>;
   }
 
+
   // Check if itemCards or categories exist and are not empty
   const items = props.items;
+  const dispatch = useDispatch()
+  const handleItems=(item)=>{
+    console.log(item)
+    dispatch(addItem(item))
+
+  }
 
   return (
     <div>
@@ -22,7 +31,7 @@ const ItemList = (props) => {
               <p className="text-sm">{item.card.info.description}</p>
             </div>
             <img className="rounded-lg w-2/12 h-3/6" src={cdnurl+item.card.info.imageId} alt="image of the food"/>
-            <button  className="border-none absolute right-1  bottom-2 p-2 rounded-lg bg-black text-white">Add +</button>
+            <button onClick={()=>{handleItems(item)}}  className="border-none absolute right-1  bottom-2 p-2 rounded-lg bg-black text-white">Add +</button>
           </div>
         ))
       ) : (
