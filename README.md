@@ -21,7 +21,7 @@ Not responsive for mobile phones.
 Cart data is not stored anywhere; should be in local storage for non-logged-in users to avoid losing data on page refresh.
 User names are not displayed in the profile immediately upon signing up; requires a refresh.
 Design improvements needed, including user address and payment details.
-Add a feature to search for different cities; currently works only for Prayagraj.
+Add a feature to search for different cities; currently works only for Hyderabad.
 How to Run Locally
 
 Clone the repository
